@@ -1,0 +1,38 @@
+var a,c:array[1..100,1..100] of integer;
+    n,m,i,j,x,k1,k2,s:integer;
+begin
+randomize;
+repeat
+write('Размер матрицы от 2 до  100');
+writeln;
+readln(n,m);
+until n in [2..100];
+writeln('Исходная матрица:');
+for i:=1 to n do
+ begin
+  for j:=1 to m do
+   begin
+    a[i,j]:=random(-10,10);
+    write(a[i,j]:3);
+   end;
+  writeln;
+ end;
+repeat
+writeln('Введите номера строк для обмена от 1 до ',n,' k1<>k2');
+readln(k1,k2);
+until(k1 in [1..n])and(k2 in [1..n])and(k1<>k2);
+for j:=1 to  n do
+ begin
+  x:=a[k1,j];
+  a[k1,j]:=a[k2,j];
+  a[k2,j]:=x;
+ end;
+writeln('Обмен строк ',k1,' и ',k2);
+for i:=1 to n do
+ begin
+  for j:=1 to n do
+  write(a[i,j]:3);
+  writeln;
+ end;
+end.
+
