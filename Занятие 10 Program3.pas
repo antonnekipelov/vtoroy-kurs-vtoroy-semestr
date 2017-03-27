@@ -1,0 +1,14 @@
+VAR A1,A2, E, X :REAL;
+I:INTEGER;
+BEGIN
+READ(E, X);
+A1:=X;
+I:=1;
+A2:=A1;
+REPEAT
+A1:=A2;
+WRITELN(A1:0:5, ' ', A2:0:5, ' ', I);
+INC(I);
+A2:=X/(2*A1*A1);
+UNTIL (ABS(A2-A1)>E)
+END.

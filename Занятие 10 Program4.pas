@@ -1,0 +1,14 @@
+vAR F,X,H:REAL;
+BEGIN
+X:=-PI;
+H:=PI;
+//WRITELN(SQRT(0)/8:0:5);
+//WRITELN(SIN(-PI):20:5, COS(-PI):20:5, SQRT(0):15:5);
+WHILE (X<=PI)DO
+BEGIN
+//F:=(SQRT(ABS(SIN(X)+1.0)))/(POWER((COS(X)-SIN(X)+1.0),3));
+F:=(SQRT(ABS(SIN(X)+1.0)))/(exp(ln((COS(X)-SIN(X)+1.0))*3));
+WRITELN(F:0:5, X:20:5);
+X:=X+PI*0.1;
+END;
+END.
