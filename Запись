@@ -1,0 +1,65 @@
+uses Graphabc;
+type svodka=record
+  nom:string[4];
+  typs:string[50];
+  marshrut:string[50];
+  aeroport :string[50];
+  Fio:string[50];
+  nomm:integer;
+  ves:real;
+  stoimosty:real;
+end;
+var 
+  a:array[1..100] of svodka;
+  i,n:integer;
+  max:real;
+begin
+  randomize;
+  max:=-10;
+  n:= random(1,5);
+  Writeln(n);
+  for i:=1 to n do with a[i] do
+    begin
+      writeln ('Номер рейса ');
+      readln(nom);
+      writeln ('Тип самолета');
+      readln(typs);
+      writeln('Маршрут');
+      readln(marshrut);
+      writeln('Пункт назначения');
+      readln(aeroport );
+      writeln('ФИО');
+      readln(Fio);
+      writeln('Номер места'); 
+      nomm:=random(1,1000);
+      writeln('Вес багажа');
+      ves:=random(1,100);
+      writeln('Стоимость билета');
+      stoimosty:=random(10000,50000);
+    end;
+  for i:=1 to n do with a[i] do
+    begin
+      write ('*******************************');
+      writeln;
+      writeln('Номер рейса ',' ', nom);
+      writeln('Тип самолета ',' ', typs);
+      writeln('Маршрут ',' ',marshrut);
+      writeln('Аэропорт прилета ',' ', aeroport);
+      writeln('ФИО пассажира ',' ', Fio);
+      writeln('Номер места ',' ',nomm);
+      writeln('Вес ',' ', ves);
+      writeln('стоимоость павна ','  ', stoimosty);
+      writeln ('*******************************');
+      writeln;
+    end;
+    for i:=1 to n do with a[i] do
+      begin
+        if stoimosty>max then
+          max:=stoimosty;
+      end;
+      writeln('Максимальная стоимость билета равна: ',max);
+end.
+
+  
+  
+  
