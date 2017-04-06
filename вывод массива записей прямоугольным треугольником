@@ -1,0 +1,25 @@
+var
+   s,s1:string;
+   k,i:integer;
+   a:byte;
+ begin
+   k:=0;
+   s:='цуорпав  врпав  длорпав  щшгнекщ  ывапрорпавы  щшгнекукенг  орпа';
+      for i:=1 to length(s) do
+        if s[i]<>'  ' then
+          begin
+            s1:=s1+s[i];
+            writeln( s1);
+            trim(s1);
+          end
+        else 
+          if s1[1]=s1[length(s1)] then
+          begin
+             inc(k);          
+          end;
+       write('Количество слов, которые начинаются и заканчиваются одной и той же буквой=',k);
+       trim(s1);
+   if pos(s1,s1)=length(s1) then
+     k:=k+1;
+   writeln(k);
+ end.
