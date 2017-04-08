@@ -1,0 +1,33 @@
+var
+  am,zoo,color:integer;
+begin
+  readln(am);
+  write(am,'-год ');
+  zoo:=am mod 12;
+ color:=am mod 10;
+ case color of
+   0,1:write(' Бел');
+   2,3:write(' Чёрн');
+   4,5:write(' Син');
+   6,7:write(' Красн');
+   8,9:write(' Жёлт');
+ end;
+  if (color=4)or(color=5)then
+    write('е') 
+  else
+    write('о');
+case zoo of
+    0:write('й обезьяны');
+   1:write('го петуха');
+   2:write('й собаки');
+   3:write('й свиньи');
+   4:write('й крысы');
+   5:write('го быка');
+   6:write('го тигра');
+   7:write('го зайца');
+   8:write('го дракона');
+   9:write('й змеи');
+  10:write('й лошади');
+  11:write('й овцы');
+end;
+end.
