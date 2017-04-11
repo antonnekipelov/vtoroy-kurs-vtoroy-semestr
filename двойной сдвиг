@@ -1,0 +1,41 @@
+  randomize;
+  for i:=1 to n do
+    begin
+      x[i]:=-random(-20,20);
+    end;
+ for i:=1 to n do
+   begin
+     write(x[i]:6:2);
+   end;
+ for i:=1 to k do
+  begin
+   for j:=1 to n do
+     begin
+        if (j=1) then
+         tmp:=x[j]
+      else
+        begin
+           x[j-1]:=x[j];
+           x[j]:=tmp;
+         end;
+    end;
+  end;
+  writeln;
+  for i:=1 to n do
+   begin
+     write(x[i]:6:2);
+   end;
+end;
+begin
+  randomize;
+  repeat
+    write('n=');
+    readln(n);
+  until n in [1..100];
+  writeln;
+  readln(k1);
+  mleft(a,n,k1);
+  writeln;
+  readln(k2);
+  mleft(a,n,k2);
+end.
