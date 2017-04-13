@@ -1,0 +1,17 @@
+var
+  z,a,b:real;
+function F(u,t:real):real;
+var
+  c:real;
+begin
+  if u>0 then
+  c:=u+sin(t);
+  if u<=0 then
+    c:=u+t;
+  F:=c;
+end;
+begin
+  readln(a,b);
+  z:=F(sin(a),b)+f(cos(a),b)+f(sin(a)*sin(a),b-1);
+  writeln(z:6:2);
+end.
