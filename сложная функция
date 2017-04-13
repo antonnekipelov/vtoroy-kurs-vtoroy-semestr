@@ -1,0 +1,20 @@
+var
+  z,a,b:real;
+function F(u:real; t:real) :real;
+var c:real;
+  begin
+    if (u>0) and (t>0) then
+      c:=power(u,2)+power(t,2);
+    if (u<=0) and(t<=0)then
+      c:= u + power(t,2);
+    if (u>0) and (t<=0)then
+      c:=u-t;
+    if (u<=0)and(t>0)then
+      c:=u+t;
+    F:=c; 
+  end;
+  begin
+    readln(a,b);
+    z:=F(a,b)+F((a*a),(b*b))+F(a*a-1,6)+F(a-b,b);
+    writeln(z:6:2);
+  end
