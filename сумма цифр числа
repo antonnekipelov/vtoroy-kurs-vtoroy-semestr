@@ -1,0 +1,17 @@
+function summa(c:integer):integer;
+var s:integer;
+  begin
+    s:=0;
+  while (c > 0) do
+    begin
+      s:=s + (c mod 10);
+        c:=c div 10
+    end;
+  summa:=s
+end;
+var n:integer;
+  begin
+    readln(n);
+    write(summa(n));
+  end.
+  //987654
