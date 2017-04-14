@@ -1,0 +1,19 @@
+function fac(n:integer):longint;
+begin
+  if n=0 then
+    fac:=1 
+  else
+    begin
+       fac:=fac(n-1)*n;
+    end;
+end;
+var
+  i,n:integer;
+  s:longint;
+begin
+  s:=0;
+  read(n);
+    for i:=1 to n do
+      s:=s+fac(i);
+    write(s);
+end.
