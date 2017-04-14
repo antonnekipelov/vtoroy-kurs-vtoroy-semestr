@@ -1,0 +1,16 @@
+function kolichestvo(c:integer):integer;
+var k:integer;
+  begin
+    k:=0;
+  while (c > 0) do
+    begin
+      inc(k);
+        c:=c div 10
+    end;
+  kolichestvo:=k
+end;
+var n:integer;
+  begin
+    readln(n);
+    write(kolichestvo(n));
+  end.
