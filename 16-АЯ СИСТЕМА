@@ -1,0 +1,22 @@
+var
+  a,p:integer;
+function f(x:integer;p:integer):string;
+const
+  mas:array[0..15] of char =('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F');
+var 
+  s:string;
+  d:0..15;
+  begin
+    s:=' ';
+    if x<>0 then
+      begin
+        d:= x mod p; 
+         x:=x div p;
+         result:=f(x,p)+mas [d];
+         writeln(d,' ',x);
+      end;
+    end;
+  begin
+    readln(a,p);
+    writeln(f(a,p));
+  end.
