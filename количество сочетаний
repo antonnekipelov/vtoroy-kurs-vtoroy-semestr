@@ -1,0 +1,12 @@
+function comb( n:integer; m:integer):integer; 
+begin
+  IF (m = 0) OR (n = m) THEN
+    COMB:=1 
+ ELSE
+   COMB:= comb(n - 1, m) + comb(n - 1, m - 1);
+end;
+  VAR n, m:INTEGER;
+BEGIN
+    READLN (n, m);
+    WRITELN (comb(n, m));
+END.
