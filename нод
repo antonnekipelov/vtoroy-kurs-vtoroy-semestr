@@ -1,0 +1,16 @@
+var a, b, nod: integer;
+function get_nod(m, n: integer): integer;
+ var o: integer;
+ begin
+  o := m mod n;
+  if o = 0 then
+   get_nod := n
+  else
+   get_nod := get_nod(n, o)
+ end;
+BEGIN
+ write('Введите два числа: ');
+ read(a, b);
+ nod := get_nod(a, b);
+ writeln('НОД: ', nod);
+END.
