@@ -1,0 +1,29 @@
+type mas=array[1..50]of real;
+var a:mas;
+    n,i:integer;
+function Min(n:integer):real;
+var w:real;
+begin
+if n>1 then
+ begin
+  w:=Min(n-1);
+  if a[n]>w then 
+  Min:=w
+  else Min:=a[n]
+ end
+else Min:=a[1]
+end;
+begin
+randomize;
+write('Razmer massiva A n=');
+readln(n);
+writeln('Massiv A:');
+for i:=1 to n do
+  begin
+    a[i]:=random(20);
+    write(a[i],' ');
+  end;
+writeln;
+write(Min(n));
+readln
+end.
