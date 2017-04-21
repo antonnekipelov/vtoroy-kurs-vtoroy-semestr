@@ -2,25 +2,27 @@ type mas=array[1..50]of real;
 var a:mas;
     n,i:integer;
 function Max(n:integer):real;
-var w:real;
+var maxi:real;
 begin
-if n>1 then
- begin
-  w:=Max(n-1);
-  if a[n]<w then 
-  Max:=w
-  else Max:=a[n]
+  if n>1 then
+    begin
+      maxi:=Max(n-1);
+     if a[n]<maxi then 
+       Max:=maxi
+     else 
+       Max:=a[n]
  end
-else Max:=a[1]
+ else
+   Max:=a[1]
 end;
 begin
-randomize;
-readln(n);
-for i:=1 to n do
-  begin
-    a[i]:=random(20);
-    write(a[i],' ');
-  end;
-writeln;
-write(Max(n));
+  randomize;
+  readln(n);
+  for i:=1 to n do
+    begin
+      a[i]:=random(20);
+      write(a[i],' ');
+    end;
+  writeln;
+  write(Max(n));
 end.
