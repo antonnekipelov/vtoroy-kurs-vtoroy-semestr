@@ -15,15 +15,12 @@ else Max:=a[1]
 end;
 begin
 randomize;
-write('Razmer massiva A n=');
 readln(n);
-writeln('Massiv A:');
 for i:=1 to n do
   begin
     a[i]:=random(20);
     write(a[i],' ');
   end;
 writeln;
-write('max=',Max(n));
-readln
+write(Max(n));
 end.
