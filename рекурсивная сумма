@@ -1,0 +1,20 @@
+ var
+ sum,n:integer;
+ function S(n:integer):integer;
+ var
+ R:integer;
+ begin
+ if n<>0 then begin
+ R:=n mod 10;        // копия в памяти-> заполнение    					стека-> прямой ход
+ n:=n div 10;        // копия в памяти-> заполнение 						стека-> прямой ход 
+ writeln(R,'  ',n);  // промежуточные результаты
+ result:=R+S(n);          // получение суммы цифр в момент заполнения стека и снова вход в функцию
+ writeln(result);
+end;
+ end;
+  begin
+ sum:=0;
+ readln(n);
+ sum:=S(N);
+ writeln('сумма цифр= ',sum);
+  end.
