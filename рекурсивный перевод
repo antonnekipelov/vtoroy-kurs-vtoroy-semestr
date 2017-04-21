@@ -1,0 +1,22 @@
+var
+  a:integer;
+function f(x:integer):string;
+const
+  mas:array[0..1] of char =('0','1');
+var 
+  s:string;
+  d:0..1;
+  begin
+    s:=' ';
+    if x<>0 then
+      begin
+        d:= x mod 2; 
+         x:=x div 2;
+         result:=f(x)+mas [d];
+         writeln(d,' ',x);
+      end;
+    end;
+  begin
+    readln(a);
+    writeln(f(a));
+  end.
