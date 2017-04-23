@@ -1,0 +1,34 @@
+VAR
+  A,B,C,D,E:string; 
+  bb:boolean;
+function Simm(A:string;i:integer;k:string):boolean;
+  begin
+    if i>length(A) then 
+      begin
+        Writeln(A=K); 
+        exit; 
+      end
+   else
+      begin
+        k:=copy(A,i,1)+K;
+        i:=i+1;
+        result:=Simm(A,i,k);
+      end; // Перед выходом убрала все команды
+    end;
+begin
+  A:='123456787654321';
+  Writeln(A);
+  bb:=(simm(A,1,''));
+  B:='QWERTYUIOIUYTREABBA';
+  Writeln(B);
+  bb:=(simm(B,1,''));
+  C:='ASDFGHHGFDSA';
+  Writeln(C);
+  bb:=(simm(C,1,''));
+  D:='123457890';
+  Writeln(D);
+  bb:=(simm(D,1,''));
+  E:='ZXCVBN,MNBVCX';
+  Writeln(E);
+  bb:=(simm(E,1,''));
+end.
