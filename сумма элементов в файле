@@ -1,0 +1,67 @@
+{Разработать процедуру записи в файл m чисел.
+ С помощью процедуры создать   
+ 2 файла (длина m) с названиями A1.dat  и A2.dat
+2.2 Разработать процедуру чтения чисел из файла и нахождения их суммы.
+В процедуре применить конструкцию While not eof(FP)
+2.3 В программе полученные суммы сравнить между собой и выдать 
+сообщение: сумма 1-го файла больше суммы 2-го файла или сумма 2-го
+ файла больше суммы 1-го файла.}
+type
+  x=file of real;
+var
+  a,b:x;
+  m:integer;
+  s1,s2:real;
+Procedure z (var f:x; var n:integer);
+var 
+  s:real;
+  i:integer;
+  begin
+  rewrite(f);
+  readln(n);
+  for i:=1 to n do
+    begin
+      read(s);
+      write (f,s);
+    end;
+  close (f);  
+  end;
+Procedure summ(var f:x; var n:integer; var s:real);
+var
+  sim:real;
+  begin
+    reset(f);
+    s:=0;
+    while not eof (f) do
+      begin
+        read(f,sim);
+        s:=s+sim;
+      end;
+    close(f);
+  end;
+  begin
+    assign(a,'c:\Users\Антон\Desktop\A1.dat');
+    assign(b,'c:\Users\Антон\Desktop\A2.dat');
+    z(a,m);
+    summ(a,m,s1);
+    writeln(s1:2:2);
+     z(b,m);
+    summ(b,m,s2);
+    writeln(s2:2:2);
+    if (s1>s2) then
+      writeln('сумма 1-го файла больше суммы 2-го файла');
+    if s2>s1 then
+      writeln('сумма 2-го файла больше суммы 1-го файла'); 
+  end.
+{m = 5
+11.0;
+33.2;
+55.4;
+77.6;
+99.8;
+m = 5
+22.1;
+44.3;
+66.5;
+88.7;
+100.9}
